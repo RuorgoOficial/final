@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgja745lkwbaf"]
+
+[ext_resource type="PackedScene" uid="uid://qacbyrnwc4bi" path="res://Scenes/World/Compositions/grass_fight_composition.tscn" id="1_nliin"]
+[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="2_sspcs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_koo4p"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7evct"]
+sky_material = SubResource("ProceduralSkyMaterial_koo4p")
+
+[sub_resource type="Environment" id="Environment_ugdqy"]
+background_mode = 2
+sky = SubResource("Sky_7evct")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="grass_fight" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 1.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ugdqy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 1.27491, 0)
+shadow_enabled = true
+
+[node name="grass_fight_composition" parent="." instance=ExtResource("1_nliin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Girl" parent="." instance=ExtResource("2_sspcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
+is_fighting_scene = true
