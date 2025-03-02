@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c47qrwiqj1mq3"
+path="res://.godot/imported/unit-mansion.obj-c1498c384c0952446c5daaeb4b0006ec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/unit-mansion.obj-c1498c384c0952446c5daaeb4b0006ec.mesh"]
+
+source_file="res://Art/Envvironment/Exagons/Models/OBJ format/unit-mansion.obj"
+dest_files=["res://.godot/imported/unit-mansion.obj-c1498c384c0952446c5daaeb4b0006ec.mesh", "res://.godot/imported/unit-mansion.obj-c1498c384c0952446c5daaeb4b0006ec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

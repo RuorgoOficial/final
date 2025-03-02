@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsi3g83aon7f3"
+path="res://.godot/imported/unit-house.obj-afbfec6a9ffca9545c767a952395a967.mesh"
+
+[deps]
+
+files=["res://.godot/imported/unit-house.obj-afbfec6a9ffca9545c767a952395a967.mesh"]
+
+source_file="res://Art/Envvironment/Exagons/Models/OBJ format/unit-house.obj"
+dest_files=["res://.godot/imported/unit-house.obj-afbfec6a9ffca9545c767a952395a967.mesh", "res://.godot/imported/unit-house.obj-afbfec6a9ffca9545c767a952395a967.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vwtqfiq812gv"
+path="res://.godot/imported/building-dock.obj-5234b116caf4009336147a2ac86238fe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building-dock.obj-5234b116caf4009336147a2ac86238fe.mesh"]
+
+source_file="res://Art/Envvironment/Exagons/Models/OBJ format/building-dock.obj"
+dest_files=["res://.godot/imported/building-dock.obj-5234b116caf4009336147a2ac86238fe.mesh", "res://.godot/imported/building-dock.obj-5234b116caf4009336147a2ac86238fe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

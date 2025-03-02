@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buvvykmgm5c7n"
+path="res://.godot/imported/building-market.obj-bd7e48ced3eb017c68dc7f64effaf4cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building-market.obj-bd7e48ced3eb017c68dc7f64effaf4cc.mesh"]
+
+source_file="res://Art/Envvironment/Exagons/Models/OBJ format/building-market.obj"
+dest_files=["res://.godot/imported/building-market.obj-bd7e48ced3eb017c68dc7f64effaf4cc.mesh", "res://.godot/imported/building-market.obj-bd7e48ced3eb017c68dc7f64effaf4cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

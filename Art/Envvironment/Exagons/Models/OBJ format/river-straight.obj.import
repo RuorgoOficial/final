@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1824xtk7bqqj"
+path="res://.godot/imported/river-straight.obj-5be5a34ebeecfe4c54bad5ef9a120233.mesh"
+
+[deps]
+
+files=["res://.godot/imported/river-straight.obj-5be5a34ebeecfe4c54bad5ef9a120233.mesh"]
+
+source_file="res://Art/Envvironment/Exagons/Models/OBJ format/river-straight.obj"
+dest_files=["res://.godot/imported/river-straight.obj-5be5a34ebeecfe4c54bad5ef9a120233.mesh", "res://.godot/imported/river-straight.obj-5be5a34ebeecfe4c54bad5ef9a120233.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

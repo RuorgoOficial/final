@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://qacbyrnwc4bi"]
+
+[ext_resource type="PackedScene" uid="uid://b46430rpawkw6" path="res://Art/Envvironment/Exagons/Models/GLB format/grass-hill.glb" id="1_7snha"]
+[ext_resource type="PackedScene" uid="uid://d2ki7tywymsov" path="res://Art/Envvironment/Exagons/Models/GLB format/grass.glb" id="2_a3qgx"]
+[ext_resource type="PackedScene" uid="uid://duaxgiyafuexn" path="res://Art/Envvironment/Exagons/Models/GLB format/grass-forest.glb" id="3_4u6ow"]
+[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/girl.tscn" id="4_hobjh"]
+
+[node name="GrassFight" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0362094, 0.443735, -0.26818)
+
+[node name="grass-hill2" parent="." instance=ExtResource("1_7snha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.75)
+
+[node name="grass2" parent="." instance=ExtResource("2_a3qgx")]
+
+[node name="grass3" parent="." instance=ExtResource("2_a3qgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="grass4" parent="." instance=ExtResource("2_a3qgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="grass-forest2" parent="." instance=ExtResource("3_4u6ow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.75)
+
+[node name="Girl" parent="." instance=ExtResource("4_hobjh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.35, 0.35, 0)
