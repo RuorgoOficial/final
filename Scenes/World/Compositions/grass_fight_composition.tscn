@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qacbyrnwc4bi"]
+
+[ext_resource type="PackedScene" uid="uid://2qx6j4fkh1te" path="res://Scenes/World/Terrains/grass_terrain.tscn" id="1_a1mim"]
+[ext_resource type="PackedScene" uid="uid://dlu58bifl3kxc" path="res://Scenes/World/Terrains/grass_rock_terrain.tscn" id="2_wq15f"]
+[ext_resource type="PackedScene" uid="uid://ciwblpehbbyue" path="res://Scenes/World/Terrains/grass_tree_terrain.tscn" id="3_grb4f"]
+
+[node name="grass_fight_composition" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0362094, 0.443735, -0.26818)
+
+[node name="Terrains" type="Node3D" parent="."]
+
+[node name="grass_terrain" parent="Terrains" instance=ExtResource("1_a1mim")]
+
+[node name="grass_terrain2" parent="Terrains" instance=ExtResource("1_a1mim")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 0)
+
+[node name="grass_terrain3" parent="Terrains" instance=ExtResource("1_a1mim")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 0)
+
+[node name="grass_tree_terrain" parent="Terrains" instance=ExtResource("3_grb4f")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2, 0, -3)
+
+[node name="grass_rock_terrain" parent="Terrains" instance=ExtResource("2_wq15f")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2, 0, -3)

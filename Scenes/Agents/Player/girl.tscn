@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://tr3dan0g4y1y"]
 
-[ext_resource type="Script" path="res://Scenes/girl.gd" id="1_8u8of"]
+[ext_resource type="Script" path="res://Scenes/Agents/Player/girl.gd" id="1_8u8of"]
 [ext_resource type="Texture2D" uid="uid://cnfnya1i51hef" path="res://Art/Humans/Girl_1/Idle.png" id="1_sird5"]
 
 [sub_resource type="Animation" id="Animation_f54tq"]
@@ -43,9 +43,9 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pf1li"]
+size = Vector3(0.4, 0.8, 0.1)
 
 [node name="Girl" type="CharacterBody3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_8u8of")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -59,7 +59,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, -0.244, 0)
 shape = SubResource("BoxShape3D_pf1li")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.48095)
