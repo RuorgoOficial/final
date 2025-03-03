@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://b4usxw6b7ar0q"]
 
 [node name="Island" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]

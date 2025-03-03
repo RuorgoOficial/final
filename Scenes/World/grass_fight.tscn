@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgja745lkwbaf"]
 
 [ext_resource type="PackedScene" uid="uid://qacbyrnwc4bi" path="res://Scenes/World/Compositions/grass_fight_composition.tscn" id="1_nliin"]
-[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="2_sspcs"]
+[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="2_203f4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_koo4p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,6 +31,6 @@ shadow_enabled = true
 [node name="grass_fight_composition" parent="." instance=ExtResource("1_nliin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Girl" parent="." instance=ExtResource("2_sspcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
+[node name="Girl" parent="." instance=ExtResource("2_203f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
 is_fighting_scene = true

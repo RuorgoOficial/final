@@ -6,9 +6,10 @@ const SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 
 @onready var animation_player = $AnimationPlayer;
+@onready var sprite3D = $Sprite3D;
 
 func _ready() -> void:
-	animation_player.play("IDLE")
+	animation_IDLE()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,8 +28,32 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			animation_WALK()
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
+			animation_IDLE()
 
 		move_and_slide()
+	elif is_fighting_scene:
+		if Input.is_key_pressed(KEY_W):
+			animation_ATACK()
+			
+#region Animation Region
+const ANIMATION_IDLE_NAME : String = "IDLE"
+const ANIMATION_ATACK_NAME : String = "ATACK"
+const ANIMATION_WALK_NAME : String = "WALK"
+
+func animation_IDLE():
+	animation_player.play(ANIMATION_IDLE_NAME)
+	
+func animation_ATACK():
+	animation_player.play(ANIMATION_ATACK_NAME)
+	
+func animation_WALK():
+	animation_player.play(ANIMATION_WALK_NAME)
+#endregion
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == ANIMATION_ATACK_NAME:
+		animation_IDLE();
