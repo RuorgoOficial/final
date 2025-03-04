@@ -8,10 +8,14 @@ const JUMP_VELOCITY = 4.5
 @onready var animation_player = $AnimationPlayer;
 @onready var sprite3D = $Sprite3D;
 
+var stats : Resource
+
 signal on_player_is_moving()
+signal on_attacking()
 
 func _ready() -> void:
 	animation_IDLE()
+	stats = player_stats.new();
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -90,11 +94,11 @@ func sprite_direction(direction:int) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == ANIMATION_ATACK_NAME:
 		animation_IDLE()
+		on_attacking.emit()
 	elif anim_name == ANIMATION_JUMP_START_NAME:
 		animation_JUMP()
 	elif anim_name == ANIMATION_JUMP_NAME:
 		animation_JUMP_END()
 	elif anim_name == ANIMATION_JUMP_END_NAME:
 		animation_IDLE()
-		
 		
