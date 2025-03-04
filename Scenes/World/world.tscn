@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4usxw6b7ar0q"]
+
+[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="1_38qxu"]
+[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_jfwsc"]
+[ext_resource type="PackedScene" uid="uid://bjrff3s5bpgqm" path="res://Scenes/World/Terrains/wather_terrain.tscn" id="2_ojv6r"]
+[ext_resource type="PackedScene" uid="uid://dolcvdwst1wpi" path="res://Scenes/World/Terrains/down_island_terrain.tscn" id="3_5j6qx"]
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0846, 0)
+script = ExtResource("1_jfwsc")
+
+[node name="Girl" parent="." instance=ExtResource("1_38qxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Girl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 2)
+
+[node name="Wather" parent="." instance=ExtResource("2_ojv6r")]
+
+[node name="DownIsland" parent="." instance=ExtResource("3_5j6qx")]
+
+[connection signal="on_player_is_moving" from="Girl" to="." method="_on_girl_on_player_is_moving"]
