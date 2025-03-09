@@ -1,13 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4usxw6b7ar0q"]
+[gd_scene load_steps=8 format=3 uid="uid://b4usxw6b7ar0q"]
 
 [ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="1_38qxu"]
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_jfwsc"]
 [ext_resource type="PackedScene" uid="uid://bjrff3s5bpgqm" path="res://Scenes/World/Terrains/wather_terrain.tscn" id="2_ojv6r"]
 [ext_resource type="PackedScene" uid="uid://dolcvdwst1wpi" path="res://Scenes/World/Terrains/down_island_terrain.tscn" id="3_5j6qx"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eongy"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uc7t5"]
+sky_material = SubResource("ProceduralSkyMaterial_eongy")
+
+[sub_resource type="Environment" id="Environment_45son"]
+background_mode = 2
+sky = SubResource("Sky_uc7t5")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0846, 0)
 script = ExtResource("1_jfwsc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_45son")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 47.3245, 0)
+shadow_enabled = true
 
 [node name="Girl" parent="." instance=ExtResource("1_38qxu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)

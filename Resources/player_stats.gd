@@ -1,0 +1,2 @@
+extends base_stats
+class_name player_stats
