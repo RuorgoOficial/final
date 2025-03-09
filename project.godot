@@ -17,7 +17,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://Scenes/Manager/scene_manager.gd"
+FightManager="*res://Scenes/Manager/fight_manager.gd"
+PlayerManager="*res://Scenes/Manager/player_manager.gd"
+
+[display]
+
+window/name_localized={}
 
 [dotnet]
 
 project/assembly_name="Final"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
