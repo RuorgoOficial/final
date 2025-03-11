@@ -11,6 +11,7 @@ extends Control
 @onready var Object_Button = $Panel/Panel/Object_Button
 @onready var Run_Button = $Panel/Panel/Run_Button
 @onready var Player_Timer: Timer = $PlayerTimer
+@onready var Panel_Enemy_Selector: Panel = $Panel/Panel/Panel_Enemy_Selector
 
 @onready var Enemy_Name_Label = $Panel/Panel2/Enemy_Name_Label
 @onready var Enemy_HP_Label = $Panel/Panel2/Enemy_HP_Label
@@ -58,9 +59,10 @@ func start_timmer(timer: Timer) -> void:
 	timer.start()
 
 func _on_attack_button_pressed() -> void:
-	disable_attack_button(true)
-	start_timmer(Player_Timer)
-	_on_attack_button_on_pressed.emit()
+	set_attack_button_visible(true);
+	#disable_attack_button(true)
+	#start_timmer(Player_Timer)
+	#_on_attack_button_on_pressed.emit()
 
 func _on_player_timer_timeout() -> void:
 	disable_attack_button(false)
@@ -71,3 +73,12 @@ func _on_enemy_timer_timeout() -> void:
 	
 func disable_attack_button(isEnable:bool)-> void:
 	Attack_Button.disabled = isEnable;
+	
+func set_attack_button_visible(isVisible:bool)-> void:
+	Panel_Enemy_Selector.visible = isVisible;
+
+func _on_panel_enemy_selector_focus_exited() -> void:
+	set_attack_button_visible(false);
+
+func _on_back_button_pressed() -> void:
+	set_attack_button_visible(false);
