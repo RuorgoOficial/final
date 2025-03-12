@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgja745lkwbaf"]
+
+[ext_resource type="PackedScene" uid="uid://qacbyrnwc4bi" path="res://Scenes/World/Compositions/grass_fight_composition.tscn" id="1_nliin"]
+[ext_resource type="Script" uid="uid://dxfj5x3ca36g" path="res://Scenes/World/grass_fight.gd" id="1_uwukh"]
+[ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="2_203f4"]
+[ext_resource type="PackedScene" uid="uid://d3f48qd16xhq0" path="res://Scenes/World/UI/figthing_control_ui.tscn" id="2_cyfpn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_koo4p"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7evct"]
+sky_material = SubResource("ProceduralSkyMaterial_koo4p")
+
+[sub_resource type="Environment" id="Environment_ugdqy"]
+background_mode = 2
+sky = SubResource("Sky_7evct")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="grass_fight" type="Node3D"]
+script = ExtResource("1_uwukh")
+
+[node name="Control" parent="." instance=ExtResource("2_cyfpn")]
+anchors_preset = -1
+offset_top = 7.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 2)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ugdqy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 1.27491, 0)
+shadow_enabled = true
+
+[node name="grass_fight_composition" parent="." instance=ExtResource("1_nliin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Girl" parent="." instance=ExtResource("2_203f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
+is_fighting_scene = true
+
+[connection signal="_on_attack_button_on_pressed" from="Control" to="." method="_on_control__on_attack_button_on_pressed"]
+[connection signal="on_attacking" from="Girl" to="." method="_on_girl_on_attacking"]

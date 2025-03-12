@@ -12,9 +12,10 @@ var stats : Resource
 var actions : Resource
 
 var current_hp: int
+var enemy_index: int = 0
 
 signal on_player_is_moving()
-signal on_attacking()
+signal on_attacking(index:int)
 
 func _ready() -> void:
 	stats = player_stats.new();
@@ -66,7 +67,7 @@ func set_exp(exp: int) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == actions.ANIMATION_ATACK_NAME:
 		actions.animation_IDLE(self)
-		on_attacking.emit()
+		on_attacking.emit(enemy_index)
 	elif anim_name == actions.ANIMATION_JUMP_START_NAME:
 		actions.animation_JUMP(self)
 	elif anim_name == actions.ANIMATION_JUMP_NAME:

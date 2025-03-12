@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://d3f48qd16xhq0"]
 
-[ext_resource type="Script" path="res://Scenes/World/UI/figthing_control_ui.gd" id="1_6xxie"]
+[ext_resource type="Script" uid="uid://dsg18upe6jwsr" path="res://Scenes/World/UI/figthing_control_ui.gd" id="1_6xxie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw3cw"]
 content_margin_left = 4.0
@@ -525,8 +525,9 @@ text = "Run"
 alignment = 0
 clip_text = true
 
-[node name="Panel_Enemy_Selector" type="Panel" parent="Panel/Panel"]
+[node name="Panel_Enemy_Selector" type="VBoxContainer" parent="Panel/Panel"]
 visible = false
+clip_contents = true
 layout_mode = 0
 offset_left = 600.0
 offset_top = -99.0
@@ -534,10 +535,7 @@ offset_right = 724.0
 offset_bottom = 50.0
 
 [node name="Back_Button" type="Button" parent="Panel/Panel/Panel_Enemy_Selector"]
-layout_mode = 0
-offset_top = 123.0
-offset_right = 124.0
-offset_bottom = 148.0
+layout_mode = 2
 text = "Back"
 alignment = 0
 

@@ -11,24 +11,12 @@ extends Control
 @onready var Object_Button = $Panel/Panel/Object_Button
 @onready var Run_Button = $Panel/Panel/Run_Button
 @onready var Player_Timer: Timer = $PlayerTimer
-@onready var Panel_Enemy_Selector: Panel = $Panel/Panel/Panel_Enemy_Selector
-
-@onready var Enemy_Name_Label = $Panel/Panel2/Enemy_Name_Label
-@onready var Enemy_HP_Label = $Panel/Panel2/Enemy_HP_Label
-@onready var Enemy_MP_Label = $Panel/Panel2/Enemy_MP_Label
-@onready var Enemy_HP_Progress_Bar : ProgressBar = $Panel/Panel2/Enemy_HP_Progress_Bar
-@onready var Enemy_MP_Progress_Bar : ProgressBar = $Panel/Panel2/Enemy_MP_Progress_Bar
-@onready var Enemy_Timer: Timer = $EnemyTimer
-
-signal _on_attack_button_on_pressed
-signal on_attack_on_enemy_timer_timeout
+@onready var Panel_Enemy_Selector: VBoxContainer = $Panel/Panel/Panel_Enemy_Selector
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Player_Timer.wait_time = 5;
-	Enemy_Timer.wait_time = 8
 	start_timmer(Player_Timer)
-	start_timmer(Enemy_Timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,13 +29,10 @@ func set_player_timer():
 
 func _set_initial_player_hp_progress_bar(max_hp)->void:
 	set_initial_progress_bar(Player_HP_Progress_Bar, max_hp)
-func _set_initial_enemy_hp_progress_bar(max_hp)->void:
-	set_initial_progress_bar(Enemy_HP_Progress_Bar, max_hp)
+
 	
 func _set_player_hp_progress_bar(cuantity:int)->void:
 	set_progress_bar(Player_HP_Progress_Bar, cuantity)
-func _set_enemy_hp_progress_bar(cuantity:int)->void:
-	set_progress_bar(Enemy_HP_Progress_Bar, cuantity)
 	
 func set_initial_progress_bar(progress_bar: ProgressBar, max_value: int)->void:
 	progress_bar.max_value = max_value
@@ -66,16 +51,20 @@ func _on_attack_button_pressed() -> void:
 
 func _on_player_timer_timeout() -> void:
 	disable_attack_button(false)
-
-func _on_enemy_timer_timeout() -> void:
-	on_attack_on_enemy_timer_timeout.emit()
-	start_timmer(Enemy_Timer)
 	
 func disable_attack_button(isEnable:bool)-> void:
 	Attack_Button.disabled = isEnable;
 	
 func set_attack_button_visible(isVisible:bool)-> void:
 	Panel_Enemy_Selector.visible = isVisible;
+	
+func attack_workflow() -> void:
+	set_attack_button_visible(false);
+	disable_attack_button(true)
+	start_timmer(Player_Timer)
+	
+func add_button_to_panel_enemy_selector(button: Control) -> void:
+	Panel_Enemy_Selector.add_child(button)
 
 func _on_panel_enemy_selector_focus_exited() -> void:
 	set_attack_button_visible(false);

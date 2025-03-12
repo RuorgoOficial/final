@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fgacrj5pb2"]
 
-[ext_resource type="Script" path="res://Scenes/World/UI/enemy_button.gd" id="1_b8eue"]
+[ext_resource type="Script" uid="uid://c0x8e80o4vgdb" path="res://Scenes/World/UI/enemy_button.gd" id="1_b8eue"]
 
 [node name="Button" type="Control"]
 layout_mode = 3
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_b8eue")
 
 [node name="Enemy_Button" type="Button" parent="."]
+layout_mode = 0
 offset_right = 124.0
 offset_bottom = 31.0
 text = "Enemy"

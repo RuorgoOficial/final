@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4usxw6b7ar0q"]
 
 [ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="1_38qxu"]
-[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_jfwsc"]
+[ext_resource type="Script" uid="uid://cbl3vb4k1ndfa" path="res://Scenes/World/world.gd" id="1_jfwsc"]
 [ext_resource type="PackedScene" uid="uid://bjrff3s5bpgqm" path="res://Scenes/World/Terrains/wather_terrain.tscn" id="2_ojv6r"]
 [ext_resource type="PackedScene" uid="uid://dolcvdwst1wpi" path="res://Scenes/World/Terrains/down_island_terrain.tscn" id="3_5j6qx"]
 
@@ -19,7 +19,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0846, 0)
 script = ExtResource("1_jfwsc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
