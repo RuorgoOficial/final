@@ -60,9 +60,9 @@ func _physics_process(delta: float) -> void:
 func reduce_hp(quantity: int) -> void:
 	current_hp -= quantity;
 	
-func set_exp(exp: int) -> void:
-	PlayerManager.total_experience += exp;
-	stats.get_exp(exp);
+func set_exp(experience: int) -> void:
+	PlayerManager.total_experience += experience;
+	stats.get_exp(experience);
 		
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == actions.ANIMATION_ATACK_NAME:

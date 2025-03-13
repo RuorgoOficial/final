@@ -11,7 +11,10 @@ extends Control
 @onready var Object_Button = $Panel/Panel/Object_Button
 @onready var Run_Button = $Panel/Panel/Run_Button
 @onready var Player_Timer: Timer = $PlayerTimer
-@onready var Panel_Enemy_Selector: VBoxContainer = $Panel/Panel/Panel_Enemy_Selector
+@onready var Panel_Enemy_Selector: ItemList = $Panel/Panel/Panel_Enemy_Selector
+@onready var Back_Button: Button = $Panel/Panel/Panel_Enemy_Selector/Back_Button
+
+signal on_enemy_button_clicked(enemy_index:int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +22,7 @@ func _ready() -> void:
 	start_timmer(Player_Timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	set_player_timer()
 	
 func set_player_timer():
@@ -63,11 +66,14 @@ func attack_workflow() -> void:
 	disable_attack_button(true)
 	start_timmer(Player_Timer)
 	
-func add_button_to_panel_enemy_selector(button: Control) -> void:
-	Panel_Enemy_Selector.add_child(button)
+func add_button_to_panel_enemy_selector(enemy_name: String) -> void:
+	Panel_Enemy_Selector.add_item(enemy_name)
 
 func _on_panel_enemy_selector_focus_exited() -> void:
 	set_attack_button_visible(false);
 
 func _on_back_button_pressed() -> void:
 	set_attack_button_visible(false);
+
+func _on_panel_enemy_selector_item_clicked(index: int, _at_position: Vector2, _mouse_button_index: int) -> void:
+	on_enemy_button_clicked.emit(index);

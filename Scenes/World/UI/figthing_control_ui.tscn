@@ -525,17 +525,24 @@ text = "Run"
 alignment = 0
 clip_text = true
 
-[node name="Panel_Enemy_Selector" type="VBoxContainer" parent="Panel/Panel"]
-visible = false
-clip_contents = true
-layout_mode = 0
-offset_left = 600.0
-offset_top = -99.0
-offset_right = 724.0
-offset_bottom = 50.0
+[node name="Panel_Enemy_Selector" type="ItemList" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.801
+anchor_top = -0.66
+anchor_right = 0.967
+anchor_bottom = 0.333
+offset_left = 0.0509644
+offset_right = -0.28302
+offset_bottom = 0.0499992
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Back_Button" type="Button" parent="Panel/Panel/Panel_Enemy_Selector"]
 layout_mode = 2
+offset_top = 125.0
+offset_right = 124.0
+offset_bottom = 148.0
 text = "Back"
 alignment = 0
 
@@ -602,7 +609,7 @@ wait_time = 8.0
 one_shot = true
 
 [connection signal="pressed" from="Panel/Panel/Attack_Button" to="." method="_on_attack_button_pressed"]
-[connection signal="focus_exited" from="Panel/Panel/Panel_Enemy_Selector" to="." method="_on_panel_enemy_selector_focus_exited"]
+[connection signal="item_clicked" from="Panel/Panel/Panel_Enemy_Selector" to="." method="_on_panel_enemy_selector_item_clicked"]
 [connection signal="pressed" from="Panel/Panel/Panel_Enemy_Selector/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="PlayerTimer" to="." method="_on_player_timer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
