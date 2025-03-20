@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://d3f48qd16xhq0"]
 
-[ext_resource type="Script" uid="uid://dsg18upe6jwsr" path="res://Scenes/World/UI/figthing_control_ui.gd" id="1_6xxie"]
+[ext_resource type="Script" uid="uid://cvbowmimkxr7i" path="res://Scenes/World/UI/FigthingControlUi.cs" id="1_643hf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw3cw"]
 content_margin_left = 4.0
@@ -405,7 +405,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_nf2ed")
-script = ExtResource("1_6xxie")
+script = ExtResource("1_643hf")
 metadata/_edit_horizontal_guides_ = [500.0, 650.0, 525.0, 550.0, 575.0, 600.0, 625.0, 400.0, 425.0, 450.0, 475.0]
 metadata/_edit_vertical_guides_ = [0.0, 1150.0, 750.0, 25.0, 200.0, 75.0, 500.0, 525.0, 725.0, 775.0, 800.0, 1125.0, 925.0, 600.0]
 
@@ -525,17 +525,25 @@ text = "Run"
 alignment = 0
 clip_text = true
 
-[node name="Panel_Enemy_Selector" type="VBoxContainer" parent="Panel/Panel"]
+[node name="Panel_Enemy_Selector" type="ItemList" parent="Panel/Panel"]
 visible = false
-clip_contents = true
-layout_mode = 0
-offset_left = 600.0
-offset_top = -99.0
-offset_right = 724.0
-offset_bottom = 50.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.801
+anchor_top = -0.66
+anchor_right = 0.967
+anchor_bottom = 0.333
+offset_left = 0.0509644
+offset_right = -0.28302
+offset_bottom = 0.0499992
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Back_Button" type="Button" parent="Panel/Panel/Panel_Enemy_Selector"]
 layout_mode = 2
+offset_top = 125.0
+offset_right = 124.0
+offset_bottom = 148.0
 text = "Back"
 alignment = 0
 
@@ -601,8 +609,8 @@ one_shot = true
 wait_time = 8.0
 one_shot = true
 
-[connection signal="pressed" from="Panel/Panel/Attack_Button" to="." method="_on_attack_button_pressed"]
-[connection signal="focus_exited" from="Panel/Panel/Panel_Enemy_Selector" to="." method="_on_panel_enemy_selector_focus_exited"]
-[connection signal="pressed" from="Panel/Panel/Panel_Enemy_Selector/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="timeout" from="PlayerTimer" to="." method="_on_player_timer_timeout"]
+[connection signal="pressed" from="Panel/Panel/Attack_Button" to="." method="OnAttackButtonPressed"]
+[connection signal="item_clicked" from="Panel/Panel/Panel_Enemy_Selector" to="." method="OnPanelEnemySelectorItemClicked"]
+[connection signal="pressed" from="Panel/Panel/Panel_Enemy_Selector/Back_Button" to="." method="OnBackButtonPressed"]
+[connection signal="timeout" from="PlayerTimer" to="." method="OnPlayerTimerTimeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgja745lkwbaf"]
 
 [ext_resource type="PackedScene" uid="uid://qacbyrnwc4bi" path="res://Scenes/World/Compositions/grass_fight_composition.tscn" id="1_nliin"]
-[ext_resource type="Script" uid="uid://dxfj5x3ca36g" path="res://Scenes/World/grass_fight.gd" id="1_uwukh"]
+[ext_resource type="Script" uid="uid://te7xvubcsowm" path="res://Scenes/World/GrassFight.cs" id="1_u17n1"]
 [ext_resource type="PackedScene" uid="uid://tr3dan0g4y1y" path="res://Scenes/Agents/Player/girl.tscn" id="2_203f4"]
 [ext_resource type="PackedScene" uid="uid://d3f48qd16xhq0" path="res://Scenes/World/UI/figthing_control_ui.tscn" id="2_cyfpn"]
 
@@ -19,7 +19,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="grass_fight" type="Node3D"]
-script = ExtResource("1_uwukh")
+script = ExtResource("1_u17n1")
 
 [node name="Control" parent="." instance=ExtResource("2_cyfpn")]
 anchors_preset = -1
@@ -42,6 +42,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Girl" parent="." instance=ExtResource("2_203f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
-is_fighting_scene = true
+IsFightingScene = true
 
-[connection signal="on_attacking" from="Girl" to="." method="_on_girl_on_attacking"]
+[connection signal="OnAttacking" from="Girl" to="." method="OnGirlOnAttacking"]
