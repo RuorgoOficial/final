@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Final"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SceneManager="*res://Scenes/Manager/scene_manager.gd"
-FightManager="*res://Scenes/Manager/fight_manager.gd"
-PlayerManager="*res://Scenes/Manager/player_manager.gd"
+SceneManager="*res://Scenes/Manager/SceneManager.cs"
+FightManager="*res://Scenes/Manager/FightManager.cs"
+PlayerManager="*res://Scenes/Manager/PlayerManager.cs"
 
 [display]
 

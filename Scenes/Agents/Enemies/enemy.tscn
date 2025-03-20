@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c230ldteat4b7"]
 
 [ext_resource type="Texture2D" uid="uid://dnox2pnnwstdy" path="res://Art/Humans/Girl_3/Idle.png" id="1_jqq7n"]
-[ext_resource type="Script" uid="uid://xoflk8ttxmcd" path="res://Scenes/Agents/Enemies/enemy.gd" id="1_wm6af"]
+[ext_resource type="Script" uid="uid://bui4lpt0fqlh2" path="res://Scenes/Agents/Enemies/EnemyAgent.cs" id="1_mv4mx"]
 [ext_resource type="Texture2D" uid="uid://51utwo4c43cb" path="res://Art/Humans/Girl_3/Attack_1.png" id="3_nxwdp"]
 
 [sub_resource type="Animation" id="Animation_dhldg"]
@@ -172,8 +172,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_3iof6"]
 size = Vector3(0.189209, 0.803101, 0.289795)
 
-[node name="Enemy" type="Node3D"]
-script = ExtResource("1_wm6af")
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_mv4mx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 flip_h = true
@@ -186,9 +186,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_rm41v")
 }
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0550537, -0.263367, -0.00012207)
 shape = SubResource("BoxShape3D_3iof6")
 
@@ -196,5 +194,5 @@ shape = SubResource("BoxShape3D_3iof6")
 wait_time = 8.0
 autostart = true
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
