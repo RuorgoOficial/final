@@ -79,6 +79,10 @@ public partial class FigthingControlUi : Control
     {
         PanelEnemySelector.AddItem(name);
     }
+    public void RemoveButtonToPanelEnemySelector(int index)
+    {
+        PanelEnemySelector.SetItemDisabled(index, true);
+    }
     public void OnPanelEnemySelectorFocusExited()
     {
         SetAttackButtonVisible(false);

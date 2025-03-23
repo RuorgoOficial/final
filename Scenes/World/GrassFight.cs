@@ -33,10 +33,7 @@ public partial class GrassFight : Node3D
     private void SettupUi()
     {
         _control.SetInitialPlayerHpProgressBar(_player.GetHp());
-        _control.OnEnemyButtonClicked += (int index) => 
-            {
-                OnControlOnAttackButtonOnPressed(index); 
-            };
+        _control.OnEnemyButtonClicked += OnControlOnAttackButtonOnPressed;
     }
 
     private void InstantiateEnemies()
@@ -68,17 +65,20 @@ public partial class GrassFight : Node3D
         enemy.OnAttacking += OnEnemyOnAttacking;
         enemy.OnEnemyTimerTimeout += OnEnemyTimerTimeout;
 
-        AddChild(enemy);
         _enemies.Add(enemy);
+        AddChild(_enemies[i]);
 
     }
 
     public void ReturnToWorldMap(int index)
     {
         _player.GainExp(_enemies[index].GetGivenExp());
-        _enemies.RemoveAt(index);
+        _fightManager.RemoveAttackerByNode(_enemies[index]);
+        _enemies[index].Visible = false;
+        RemoveChild(_enemies[index]);
+        _control.RemoveButtonToPanelEnemySelector(index);
 
-        if (!_enemies.Any())
+        if (!_enemies.Any(e => e.IsInsideTree()))
             _sceneManager.GoToScene("res://Scenes/World/world.tscn");
     }
     public void OnEnemyOnAttacking(int index)
@@ -107,7 +107,7 @@ public partial class GrassFight : Node3D
     public void OnControlOnAttackButtonOnPressed(int index)
     {
         _control.AttackWorkflow();
-        _player.EnemyIndex = index;
+        _player.SetEnemyIndex(index);
         _fightManager.AddAttacker(_player);
     }
 

@@ -6,27 +6,27 @@ using System;
 public partial class EnemyAgent : BaseAgents<BaseStats>
 {
     private Timer _timer;
-    private int _givenExp = 100;
+    [Export]
+    public int GivenExp = 100;
     [Signal]
     public delegate void OnEnemyTimerTimeoutEventHandler(int i);
-    public EnemyAgent() : base(500)
+    public EnemyAgent() : base(100)
     {
-
     }
+
     public override void _Ready()
     {
-        //_timer = GetNode<Timer>("Timer");
-        //_timer.Start();
         base._Ready();
+        SetGivenExp();
     }
 
     public int GetGivenExp()
     {
-        return _givenExp;
+        return GivenExp;
     }
-    public void SetGivenExp(int givenExp)
+    private void SetGivenExp()
     {
-        _givenExp = givenExp;
+        GivenExp = GetLevel() * GivenExp;
     }
 
     public override void ReduceHp(int quantity)

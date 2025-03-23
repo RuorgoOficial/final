@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|solutionrelative:scenes\\agents\\enemies\\enemyagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|c:\\users\\ruorg\\desktop\\ruben\\development\\games\\final\\scenes\\world\\ui\\figthingcontrolui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|solutionrelative:scenes\\world\\ui\\figthingcontrolui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|c:\\users\\ruorg\\desktop\\ruben\\development\\games\\final\\scenes\\agents\\base\\iagents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|solutionrelative:scenes\\agents\\base\\iagents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|c:\\users\\ruorg\\desktop\\ruben\\development\\games\\final\\scenes\\manager\\fightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|solutionrelative:scenes\\manager\\fightmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|c:\\users\\ruorg\\desktop\\ruben\\development\\games\\final\\scenes\\agents\\player\\girlagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61976DED-C8C7-4136-BAB7-FB471831BD6A}|Final.csproj|solutionrelative:scenes\\agents\\player\\girlagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,36 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FightManager.cs",
-              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Manager\\FightManager.cs",
-              "RelativeDocumentMoniker": "Scenes\\Manager\\FightManager.cs",
-              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Manager\\FightManager.cs",
-              "RelativeToolTip": "Scenes\\Manager\\FightManager.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAawCYAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "GrassFight.cs",
+              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\GrassFight.cs",
+              "RelativeDocumentMoniker": "Scenes\\World\\GrassFight.cs",
+              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\GrassFight.cs*",
+              "RelativeToolTip": "Scenes\\World\\GrassFight.cs*",
+              "ViewState": "AgIAADMAAAAAAAAAAAAcwFMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:13:59.737Z",
+              "WhenOpened": "2025-03-23T19:40:48.264Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FigthingControlUi.cs",
-              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\UI\\FigthingControlUi.cs",
-              "RelativeDocumentMoniker": "Scenes\\World\\UI\\FigthingControlUi.cs",
-              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\UI\\FigthingControlUi.cs",
-              "RelativeToolTip": "Scenes\\World\\UI\\FigthingControlUi.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwFkAAABmAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "GirlAgent.cs",
+              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Player\\GirlAgent.cs",
+              "RelativeDocumentMoniker": "Scenes\\Agents\\Player\\GirlAgent.cs",
+              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Player\\GirlAgent.cs",
+              "RelativeToolTip": "Scenes\\Agents\\Player\\GirlAgent.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:09:31.195Z",
+              "WhenOpened": "2025-03-23T19:40:05.152Z",
               "EditorCaption": ""
             },
             {
@@ -70,22 +66,9 @@
               "RelativeDocumentMoniker": "Scenes\\Agents\\Enemies\\EnemyAgent.cs",
               "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Enemies\\EnemyAgent.cs",
               "RelativeToolTip": "Scenes\\Agents\\Enemies\\EnemyAgent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:03:53.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GrassFight.cs",
-              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\GrassFight.cs",
-              "RelativeDocumentMoniker": "Scenes\\World\\GrassFight.cs",
-              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\World\\GrassFight.cs",
-              "RelativeToolTip": "Scenes\\World\\GrassFight.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAewEQAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T21:14:21.75Z",
+              "WhenOpened": "2025-03-23T19:39:49.748Z",
               "EditorCaption": ""
             },
             {
@@ -96,10 +79,27 @@
               "RelativeDocumentMoniker": "Scenes\\Agents\\Base\\BaseAgents.cs",
               "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Base\\BaseAgents.cs",
               "RelativeToolTip": "Scenes\\Agents\\Base\\BaseAgents.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T15:17:52.265Z",
+              "WhenOpened": "2025-03-23T19:39:02.114Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAgents.cs",
+              "DocumentMoniker": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Base\\IAgents.cs",
+              "RelativeDocumentMoniker": "Scenes\\Agents\\Base\\IAgents.cs",
+              "ToolTip": "C:\\Users\\ruorg\\Desktop\\Ruben\\Development\\Games\\final\\Scenes\\Agents\\Base\\IAgents.cs",
+              "RelativeToolTip": "Scenes\\Agents\\Base\\IAgents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T19:39:07.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         },
